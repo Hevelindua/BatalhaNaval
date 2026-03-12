@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Batalha Naval</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/script.js"></script>
+    </head>
+    <body>
+        <header>
+            <br>
+            <h1>BATALHA</h1> 
+            <h1 style="color: orange; text-align: center; font-size: 80px;">NAVAL</h1>
+            <br>
+        </header>
+        
+        <div class="container-principal" style="background-color: white;">
+        <div class="grade-imagens">
+        <table>
+        <script>
+            var posicaoBarco1 = prompt("Digite a posição do barco 1 (Entre 1 e 8): ");
+            var posicaoBarco2 = prompt("Digite a posição do barco 2 (Entre 1 e 8): ");
+            var posicaoBarco3 = prompt("Digite a posição do barco 3 (Entre 1 e 8): ");
+            var posicaoBarco4 = prompt("Digite a posição do barco 4 (Entre 1 e 8): ");
+            var Tentativas = 0;
+            var limiteTentativas = 4;
+            function VerificaSeTemBarco(ondeClicou) {
+                if (Tentativas >= limiteTentativas) {alert("Fim do jogo! Já usou as 4 tentativas!");
+                return;
+                }
+                Tentativas++
+                if(ondeClicou == posicaoBarco1 || ondeClicou == posicaoBarco2 || ondeClicou == posicaoBarco3 || ondeClicou == posicaoBarco4) {
+                    alert("Acertou = Barco (Chance " + Tentativas + " de 4)")
+                    document.getElementById(ondeClicou).src="img/barco.png"
+                }else {
+                    alert("Errou = Água (Chance " + Tentativas + " de 4)")
+                    document.getElementById(ondeClicou).src="img/agua.png"
+                }
+                if (Tentativas >= limiteTentativas) {alert("Atingiu o limite de 4 tentativas!");
+                }}
+        </script>
+            <tr>
+                <td> <img id="1" src="img/ilha.png" alt="" onclick="VerificaSeTemBarco(1)"> </td>
+                <td> <img id="2" src="img/ilha.png" alt="" onclick="VerificaSeTemBarco(2)"> </td>
+                <td> <img id="3" src="img/ilha.png" alt="" onclick="VerificaSeTemBarco(3)"> </td>
+                <td> <img id="4" src="img/ilha.png" alt="" onclick="VerificaSeTemBarco(4)">  </td>
+            </tr>
+            <tr>
+                <td> <img id="5" src="img/ilha.png" alt="" onclick="VerificaSeTemBarco(5)"> </td>
+                <td> <img id="6" src="img/ilha.png" alt="" onclick="VerificaSeTemBarco(6)"> </td>
+                <td> <img id="7" src="img/ilha.png" alt="" onclick="VerificaSeTemBarco(7)"> </td>
+                <td> <img id="8" src="img/ilha.png" alt="" onclick="VerificaSeTemBarco(8)"> </td>
+            </tr>
+        </table>
+        </div>
+
+            <aside class="barra-lateral">
+                <h1 style="letter-spacing: 5px; -webkit-text-stroke: 2px #3e48b1; ">BATALHA NAVAL</h1>
+            </aside>
+        </div>
+    </body>
+    <footer>
+        <p>© 2026 - Hevelin Duarte</p>
+        <p>Contato: <a href="hevelinduarte002@gmail.com">hevelinduarte002@gmail.com</a></p>
+        <p>LinkedIn: <a href="www.linkedin.com/in/hevelin-duarte-guerra-084bbb2a9">www.linkedin.com/in/hevelin-duarte-guerra-084bbb2a9</a></p>
+    </footer>
+</html>
